@@ -1,14 +1,21 @@
+%define build_zeroconf 0
+
+%{?_with_zeroconf: %{expand: %%define build_zeroconf 1}}
+%{?_without_zeroconf: %global build_zeroconf 0}
+
 Summary:	Next Generation IRC Daemon
 Name:		ngircd
 Version:	13
-Release:	%mkrel 1
+Release:	%mkrel 2
 Group:		System/Servers
 License:	GPLv2+
 URL:		http://ngircd.barton.de/
 Source0:	ftp://ftp.berlios.de/pub/ngircd/ngircd-%{version}.tar.gz
 Source1:	ngircd.init
 Patch0:		ngircd-13-mdv_conf.diff
+%if %{build_zeroconf}
 BuildRequires:	avahi-compat-howl-devel
+%endif
 BuildRequires:	ident-devel
 BuildRequires:	openssl-devel
 BuildRequires:	tcp_wrappers-devel
@@ -44,7 +51,9 @@ export CFLAGS="$CFLAGS -D_GNU_SOURCE"
     --with-epoll \
     --with-openssl \
     --with-tcp-wrappers \
+%if %{build_zeroconf}
     --with-zeroconf \
+%endif
     --with-ident 
 
 %make
@@ -88,4 +97,3 @@ rm -rf %{buildroot}
 %dir %attr(0775,root,ngircd) /var/run/ngircd
 %{_mandir}/man5/ngircd.conf*
 %{_mandir}/man8/ngircd.8*
-
