@@ -5,8 +5,8 @@
 
 Summary:	Next Generation IRC Daemon
 Name:		ngircd
-Version:	13
-Release:	%mkrel 2
+Version:	14.1
+Release:	%mkrel 1
 Group:		System/Servers
 License:	GPLv2+
 URL:		http://ngircd.barton.de/
