@@ -5,7 +5,7 @@
 
 Summary:	Next Generation IRC Daemon
 Name:		ngircd
-Version:	14.1
+Version:	15
 Release:	%mkrel 1
 Group:		System/Servers
 License:	GPLv2+
