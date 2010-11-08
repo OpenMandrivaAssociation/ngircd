@@ -5,7 +5,7 @@
 
 Summary:	Next Generation IRC Daemon
 Name:		ngircd
-Version:	16
+Version:	17
 Release:	%mkrel 1
 Group:		System/Servers
 License:	GPLv2+
@@ -20,6 +20,7 @@ BuildRequires:	ident-devel
 BuildRequires:	openssl-devel
 BuildRequires:	tcp_wrappers-devel
 BuildRequires:	zlib-devel
+BuildRequires:	pam-devel
 Requires(post): rpm-helper
 Requires(preun): rpm-helper
 Requires(pre): rpm-helper
@@ -54,7 +55,8 @@ export CFLAGS="$CFLAGS -D_GNU_SOURCE"
 %if %{build_zeroconf}
     --with-zeroconf \
 %endif
-    --with-ident 
+    --with-ident \
+    --with-pam
 
 %make
 
@@ -71,6 +73,15 @@ install -m0660 doc/sample-ngircd.conf %{buildroot}%{_sysconfdir}/ngircd.conf
 
 touch  %{buildroot}%{_sysconfdir}/ngircd.motd
 rm -rf %{buildroot}%{_docdir}/ngircd
+
+# pam file
+install -d %{buildroot}%{_sysconfdir}/pam.d
+cat > %{buildroot}%{_sysconfdir}/pam.d/ngircd <<EOF
+#%PAM-1.0
+auth       required     pam_permit.so
+auth       include      system-auth
+account    include      system-auth
+EOF
 
 %pre
 %_pre_useradd ngircd /tmp /sbin/nologin
@@ -92,6 +103,7 @@ rm -rf %{buildroot}
 %doc AUTHORS COPYING ChangeLog NEWS README doc/*
 %attr(0660,root,ngircd) %config(noreplace) %{_sysconfdir}/ngircd.conf
 %attr(0660,root,ngircd) %ghost %config(noreplace) %{_sysconfdir}/ngircd.motd
+%config(noreplace) %{_sysconfdir}/pam.d/ngircd
 %{_initrddir}/ngircd
 %{_sbindir}/ngircd
 %dir %attr(0775,root,ngircd) /var/run/ngircd
