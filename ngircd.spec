@@ -5,7 +5,7 @@
 
 Summary:	Next Generation IRC Daemon
 Name:		ngircd
-Version:	17
+Version:	17.1
 Release:	%mkrel 1
 Group:		System/Servers
 License:	GPLv2+
