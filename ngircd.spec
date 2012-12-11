@@ -98,3 +98,74 @@ rm -rf %{buildroot}
 %dir %attr(0775,root,ngircd) /var/run/ngircd
 %{_mandir}/man5/ngircd.conf*
 %{_mandir}/man8/ngircd.8*
+
+
+%changelog
+* Sun Apr 29 2012 Oden Eriksson <oeriksson@mandriva.com> 19.1-1mdv2012.0
++ Revision: 794426
+- 19.1
+
+* Wed Aug 24 2011 Oden Eriksson <oeriksson@mandriva.com> 18-1
++ Revision: 696499
+- 18
+
+* Thu Dec 23 2010 Oden Eriksson <oeriksson@mandriva.com> 17.1-1mdv2011.0
++ Revision: 624175
+- 17.1
+
+* Mon Nov 08 2010 Oden Eriksson <oeriksson@mandriva.com> 17-1mdv2011.0
++ Revision: 595030
+- 17
+
+* Fri Sep 24 2010 Oden Eriksson <oeriksson@mandriva.com> 16-1mdv2011.0
++ Revision: 580908
+- 16
+
+* Fri Apr 16 2010 Funda Wang <fwang@mandriva.org> 15-2mdv2010.1
++ Revision: 535274
+- rebuild
+
+* Fri Nov 13 2009 Oden Eriksson <oeriksson@mandriva.com> 15-1mdv2010.1
++ Revision: 465755
+- 15
+
+* Mon Jun 01 2009 Oden Eriksson <oeriksson@mandriva.com> 14.1-1mdv2010.0
++ Revision: 382004
+- rediff one patch
+- 14.1
+
+* Fri Jan 30 2009 Oden Eriksson <oeriksson@mandriva.com> 13-2mdv2009.1
++ Revision: 335418
+- disable avahi/zeroconf support per default (conditional switch)
+
+* Fri Jan 23 2009 Oden Eriksson <oeriksson@mandriva.com> 13-1mdv2009.1
++ Revision: 332815
+- import ngircd
+
+
+* Fri Jan 23 2009 Oden Eriksson <oeriksson@mandriva.com> 13-1mdv2009.1
+- initial Mandriva package (fedora import)
+
+* Thu Oct 23 2008 Andreas Thienemann <andreas@bawue.net> 0.12.1-1
+- Updated to 0.12.1
+- Updated configuration sample
+
+* Mon Aug 11 2008 Tom "spot" Callaway <tcallawa@redhat.com> 0.11.0-2
+- fix license tag
+
+* Mon Feb 11 2008 Andreas Thienemann <andreas@bawue.net> 0.11.0-1
+- Updated to 0.11.0
+
+* Tue Nov 20 2007 Andreas Thienemann <andreas@bawue.net> 0.10.3-1
+- Rebased to 0.10.3
+- Incorporated patches from fw@strlen.de
+
+* Thu Apr 26 2007 Andreas Thienemann <andreas@bawue.net> 0.10.1-3
+- Removed libident requirement
+- Added patch from fw fixing server connections
+
+* Mon Apr 02 2007 Andreas Thienemann <andreas@bawue.net> 0.10.1-2
+- Added ngirc user
+
+* Sat Mar 31 2007 Andreas Thienemann <andreas@bawue.net> 0.10.1-1
+- Initial package
