@@ -2,7 +2,7 @@ Summary:	Next Generation IRC Daemon
 
 Name:		ngircd
 Version:	21.1
-Release:	1
+Release:	2
 Group:		System/Servers
 License:	GPLv2+
 URL:		http://ngircd.barton.de/
@@ -74,13 +74,13 @@ touch %{buildroot}%{_sysconfdir}/ngircd.motd
 %_pre_useradd ngircd /tmp /sbin/nologin
 
 %post
-%_tmpfilescreate %{name}
-%_post_service ngircd
+%systemd_post ngircd.service
 
 %preun
-%_preun_service ngircd
+%systemd_preun ngircd.service
 
 %postun
+%systemd_postun_with_restart ngircd.service
 %_postun_userdel ngircd
 
 %files
