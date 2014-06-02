@@ -1,2 +1,5 @@
+removed_sources:
+  ngircd-19.1.tar.gz: 7ed6633c891f0ee2aa382f54dd7cd40f2971fbbc
 sources:
-  "ngircd-19.1.tar.gz": 7ed6633c891f0ee2aa382f54dd7cd40f2971fbbc
+  ngircd-21.1.tar.gz: 23d415a0969711bb5a8406bbbffaa8976f293b95
+  ngircd-21.1.tar.gz.sig: abf796004d3e0c5e288fbddaae1f198624b7ccbd
