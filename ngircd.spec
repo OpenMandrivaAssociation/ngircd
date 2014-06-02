@@ -16,8 +16,8 @@ BuildRequires:	tcp_wrappers-devel
 BuildRequires:	zlib-devel
 BuildRequires:	pam-devel
 Requires(post):  systemd
-Requires(post):  rpm-helper >= 0.24.8-1
-Requires(preun): rpm-helper >= 0.24.8-1
+Requires(post):  rpm-helper
+Requires(preun): rpm-helper
 
 %description
 ngIRCd is a free open source daemon for Internet Relay Chat (IRC), developed
