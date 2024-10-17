@@ -5,7 +5,7 @@ Version:	21.1
 Release:	3
 Group:		System/Servers
 License:	GPLv2+
-URL:		http://ngircd.barton.de/
+URL:		https://ngircd.barton.de/
 Source0:	ftp://ftp.berlios.de/pub/ngircd/ngircd-%{version}.tar.gz
 Source1:	ftp://ftp.berlios.de/pub/ngircd/ngircd-%{version}.tar.gz.sig
 Source2:	ngircd.service
