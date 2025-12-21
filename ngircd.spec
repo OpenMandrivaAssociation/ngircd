@@ -11,6 +11,11 @@ Source1:	ftp://ftp.berlios.de/pub/ngircd/ngircd-%{version}.tar.gz.sig
 Source2:	ngircd.service
 Source3:	ngircd.pam
 Patch0:		ngircd-21.1-default_config.diff
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	openssl-devel
 BuildRequires:	tcp_wrappers-devel
 BuildRequires:	zlib-devel
